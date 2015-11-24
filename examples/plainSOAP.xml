@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<SOAP-ENV:Body>
+		<m:OrderItem xmlns:m="Some-URI">
+			<RetailerID>123456</RetailerID>
+			<ItemNumber>789</ItemNumber>
+			<ItemName>Really Cool Item</ItemName>
+			<ItemDesc>This item is the coolest</ItemDesc>
+			<OrderQuantity>100</OrderQuantity>
+			<WholesalePrice>14.99</WholesalePrice>
+			<OrderDateTime>06/03/2011 22:DD PM</OrderDateTime>
+		</m:OrderItem>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

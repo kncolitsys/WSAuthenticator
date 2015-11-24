@@ -1,0 +1,28 @@
+OVERVIEW:	Adds WSAuthentication to SOAP Requests, Sends SOAP request and returns result
+
+=====================================================
+This requires the following jar files in the [cf_home]/lib directories:
+
+xmlsec-1.4.2.jar
+wss4j-1.5.8.jar
+
+Alternately you could use Mark Mandel's JavaLoader to load the JARs.
+http://www.compoundtheory.com/?action=javaloader.index
+
+Updated versions of the jars should be tested before dropping them into production
+
+=======================================================
+THE FOLLOWING ARE REQUIRED FOR SENDING THE SOAP REQUEST
+	<cfhttpparam type="Header" name="Accept-Encoding" value="deflate;q=0">
+	<cfhttpparam type="Header" name="TE" value="deflate;q=0"> 
+		
+	EXAMPLE	
+	<cfhttp url="https://some.url.com/rpc/soap/SomeService" method="POST" result="result" >
+		<cfhttpparam type="Header" name="Accept-Encoding" value="deflate;q=0">
+		<cfhttpparam type="Header" name="TE" value="deflate;q=0"> 
+		
+		
+		<cfhttpparam type="header" name="SOAPAction" value="""SomeSoapAction""">
+		<cfhttpparam type="xml" value="#toString(xmlParse(soapEnvelope))#"/>
+	</cfhttp>
+====================================================

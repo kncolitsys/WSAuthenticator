@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<SOAP-ENV:Header>
+		<wsse:Security
+			xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+			SOAP-ENV:mustUnderstand="1">
+			<wsse:UsernameToken
+				xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+				xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+				<wsse:Username>YourUsername</wsse:Username>
+				<wsse:Password
+					Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">YourPassword</wsse:Password>
+				<wsse:Nonce
+					EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">ROkz7QJFSxFIT+uqkOSDkw==</wsse:Nonce>
+				<wsu:Created>2011-06-04T04:32:42.545Z</wsu:Created>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<m:OrderItem xmlns:m="Some-URI">
+			<RetailerID>123456</RetailerID>
+			<ItemNumber>789</ItemNumber>
+			<ItemName>Really Cool Item</ItemName>
+			<ItemDesc>This item is the coolest</ItemDesc>
+			<OrderQuantity>100</OrderQuantity>
+			<WholesalePrice>14.99</WholesalePrice>
+			<OrderDateTime>06/03/2011 21:DD PM</OrderDateTime>
+		</m:OrderItem>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
